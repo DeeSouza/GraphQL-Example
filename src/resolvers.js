@@ -1,17 +1,22 @@
-import User from "./schemas/User";
+import Game from "./schemas/Game";
+import GameComment from "./schemas/GameComment";
 
 export default {
   Query: {
-    users: () => User.find(),
-    user: (_, { id }) => User.findById(id),
+    getGames: () => Game.find().populate("comments"),
+    getGame: async (_, { id }) => Game.findById(id).populate("comments"),
   },
 
   Mutation: {
-    createUser: (_, { data: { name, email, job } }) =>
-      User.create({ name, email, job }),
-    deleteUser: (_, { id }) => {
-      User.findByIdAndDelete(id);
-      return;
+    createGame: (_, { game }) => Game.create(game),
+    addCommentGame: async (_, { comment }) => {
+      const commentGame = await GameComment.create(comment);
+      const gameById = await Game.findById(comment.game);
+
+      gameById.comments.push(commentGame);
+      gameById.save();
+
+      return commentGame;
     },
   },
 };

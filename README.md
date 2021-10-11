@@ -1,4 +1,4 @@
-# GraphQL + NodeJS + MongoDB
+# (GraphQL + NodeJS + MongoDB) + React JS
 
 # Install Docker
 

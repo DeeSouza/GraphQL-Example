@@ -1,34 +1,40 @@
-type User {
-  id: ID
-  name: String!
-  email: String
-  age: Int
-  job: Job
+schema {
+  query: Query
+  mutation: Mutation
 }
 
-type Job {
+type GameComment {
+  username: String
+  comment: String
+}
+
+type Game {
   id: ID
-  title: String!
-  company: String!
+  name: String
+  rating: Int
+  price: Float
+  forSale: Boolean
+  comments: [GameComment]
+}
+
+input GameInput {
+  name: String!
+  price: Float!
+  forSale: Boolean!
+}
+
+input CommentInput {
+  username: String!
+  comment: String!
+  game: ID!
 }
 
 type Query {
-  users: [User]
-  user(id: ID!): User!
-}
-
-input UserInput {
-  name: String!
-  email: String
-  job: JobInput
-}
-
-input JobInput {
-  title: String!
-  company: String!
+  getGame(id: ID!): Game
+  getGames: [Game]
 }
 
 type Mutation {
-  createUser(data: UserInput!): User!
-  deleteUser(id: ID!): Boolean
+  createGame(game: GameInput!): Game
+  addCommentGame(comment: CommentInput!): GameComment
 }
