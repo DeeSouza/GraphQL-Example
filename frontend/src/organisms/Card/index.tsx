@@ -12,7 +12,9 @@ const Card = () => {
         <strong>FIFA 22</strong>
 
         <div className="info">
-          <div className="price">$ 10</div>
+          <div className="price">
+            <span>$</span> 10
+          </div>
           <div className="rating">5/10</div>
 
           <button type="button">Buy</button>
