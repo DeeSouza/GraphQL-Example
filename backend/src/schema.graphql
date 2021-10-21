@@ -35,6 +35,6 @@ type Query {
 }
 
 type Mutation {
-  createGame(game: GameInput!): Game
+  addGame(game: GameInput!): Game
   addCommentGame(comment: CommentInput!): GameComment
 }

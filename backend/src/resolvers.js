@@ -8,7 +8,7 @@ export default {
   },
 
   Mutation: {
-    createGame: (_, { game }) => Game.create(game),
+    addGame: (_, { game }) => Game.create(game),
     addCommentGame: async (_, { comment }) => {
       const commentGame = await GameComment.create(comment);
       const gameById = await Game.findById(comment.game);
