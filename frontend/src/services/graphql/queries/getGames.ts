@@ -6,6 +6,8 @@ const GET_GAMES = /* GraphQL */ `
       rating
       price
       forSale
+      platform
+      cover
     }
   }
 `;

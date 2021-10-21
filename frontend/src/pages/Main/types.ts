@@ -3,7 +3,9 @@ export type Game = {
   name: string;
   rating: number | null;
   price: number;
+  platform: string;
   forSale: boolean;
+  cover: string;
 };
 
 export type GamesProps = {

@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+type ContainerProps = {
+  color: string;
+};
+
+export const Container = styled.div<ContainerProps>`
   position: absolute;
-  background-color: #107911;
+  background-color: ${({ color }) => color};
   height: 35px;
   color: #fff;
   font-weight: 500;

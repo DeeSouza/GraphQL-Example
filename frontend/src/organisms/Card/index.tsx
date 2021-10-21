@@ -1,12 +1,14 @@
+import { FaShoppingCart, FaStar } from "react-icons/fa";
+
 import Platform from "molecules/Platform";
 import { Game } from "pages/Main/types";
 import * as S from "./styles";
 
-const Card = ({ name, forSale, price, rating }: Game) => {
+const Card = ({ name, forSale, platform, price, rating, cover }: Game) => {
   return (
     <S.Container>
-      <S.Header>
-        <Platform />
+      <S.Header cover={cover}>
+        <Platform platform={platform} />
       </S.Header>
 
       <S.Details>
@@ -16,10 +18,14 @@ const Card = ({ name, forSale, price, rating }: Game) => {
           <div className="price">
             <span>$</span> {price}
           </div>
-          <div className="rating">{rating}/10</div>
+
+          <div className="rating">
+            <FaStar color="#FFFF00" size={18} />
+            <span>{rating}/10</span>
+          </div>
 
           <button disabled={forSale} type="button">
-            Buy
+            <FaShoppingCart color="#FFFFFF" size={18} />
           </button>
         </div>
       </S.Details>
