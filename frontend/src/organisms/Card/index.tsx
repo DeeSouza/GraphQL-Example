@@ -1,7 +1,8 @@
-import Platform from "../../molecules/Platform";
+import Platform from "molecules/Platform";
+import { Game } from "pages/Main/types";
 import * as S from "./styles";
 
-const Card = () => {
+const Card = ({ name, forSale, price, rating }: Game) => {
   return (
     <S.Container>
       <S.Header>
@@ -9,15 +10,17 @@ const Card = () => {
       </S.Header>
 
       <S.Details>
-        <strong>FIFA 22</strong>
+        <strong>{name}</strong>
 
         <div className="info">
           <div className="price">
-            <span>$</span> 10
+            <span>$</span> {price}
           </div>
-          <div className="rating">5/10</div>
+          <div className="rating">{rating}/10</div>
 
-          <button type="button">Buy</button>
+          <button disabled={forSale} type="button">
+            Buy
+          </button>
         </div>
       </S.Details>
     </S.Container>
