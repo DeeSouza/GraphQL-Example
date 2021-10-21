@@ -5,6 +5,8 @@ const GameSchema = new mongoose.Schema({
   rating: Number,
   price: Number,
   forSale: Boolean,
+  platform: String,
+  cover: String,
   comments: [
     {
       type: mongoose.Schema.Types.ObjectId,

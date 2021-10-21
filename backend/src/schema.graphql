@@ -3,6 +3,12 @@ schema {
   mutation: Mutation
 }
 
+enum PLATFORM {
+  PC
+  XBOX
+  PLAYSTATION
+}
+
 type GameComment {
   username: String
   comment: String
@@ -14,6 +20,8 @@ type Game {
   rating: Int
   price: Float
   forSale: Boolean
+  platform: PLATFORM
+  cover: String
   comments: [GameComment]
 }
 
@@ -21,6 +29,9 @@ input GameInput {
   name: String!
   price: Float!
   forSale: Boolean!
+  platform: PLATFORM!
+  rating: Int!
+  cover: String!
 }
 
 input CommentInput {
