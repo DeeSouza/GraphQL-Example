@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "go": "nodemon --experimental-specifier-resolution=node ./src/main"
+    "start": "nodemon --experimental-specifier-resolution=node ./src/main"
   },
   "license": "MIT",
   "dependencies": {

@@ -3,6 +3,16 @@ schema {
   mutation: Mutation
 }
 
+type Query {
+  getGame(id: ID!): Game
+  getGames: [Game]
+}
+
+type Mutation {
+  addGame(game: GameInput!): Game
+  addCommentGame(comment: CommentInput!): GameComment
+}
+
 enum PLATFORM {
   PC
   XBOX
@@ -10,6 +20,7 @@ enum PLATFORM {
 }
 
 type GameComment {
+  id: ID
   username: String
   comment: String
 }
@@ -38,14 +49,4 @@ input CommentInput {
   username: String!
   comment: String!
   game: ID!
-}
-
-type Query {
-  getGame(id: ID!): Game
-  getGames: [Game]
-}
-
-type Mutation {
-  addGame(game: GameInput!): Game
-  addCommentGame(comment: CommentInput!): GameComment
 }
