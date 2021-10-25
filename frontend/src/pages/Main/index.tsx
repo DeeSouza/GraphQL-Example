@@ -10,6 +10,7 @@ import { GamesProps, Game } from "./types";
 
 const Main = () => {
   const [games, setGames] = useState<Game[]>([]);
+
   useEffect(() => {
     (async () => {
       const { getGames } = await client.request<GamesProps>(GET_GAMES);
