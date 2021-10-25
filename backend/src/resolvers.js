@@ -4,7 +4,7 @@ import GameComment from "./schemas/GameComment";
 export default {
   Query: {
     getGames: () => Game.find().populate("comments"),
-    getGame: async (_, { id }) => Game.findById(id).populate("comments"),
+    getGame: (_, { id }) => Game.findById(id).populate("comments"),
   },
 
   Mutation: {
