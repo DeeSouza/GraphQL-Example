@@ -12,10 +12,7 @@ const { log, error } = console;
 const MONGO_URL = `mongodb://${mongoConfig.host}:${mongoConfig.port}/${mongoConfig.base}`;
 
 mongoose
-  .connect(MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(MONGO_URL)
   .then(() => log(`MongoDB Conectado: ${MONGO_URL}`))
   .catch((err) => error(err));
 

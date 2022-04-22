@@ -5,7 +5,7 @@ type HeaderProps = {
 };
 
 export const Container = styled.div`
-  height: 500px;
+  height: 450px;
   width: 300px;
   border-radius: 1rem;
   border-radius: 1rem;
@@ -13,7 +13,7 @@ export const Container = styled.div`
   flex-direction: column;
   position: relative;
   box-shadow: #424242 0px 0px 13px -1px;
-  margin: 0 20px;
+  margin: 10px 20px;
   transform: translateY(0);
   transition: all 0.25s ease-in-out;
 
