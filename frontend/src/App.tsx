@@ -14,6 +14,8 @@ function App() {
 
       <Header />
       <Menu />
+
+      <Main />
     </MainContextProvider>
   );
 }

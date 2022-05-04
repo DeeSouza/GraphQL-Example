@@ -5,14 +5,13 @@ type HeaderProps = {
 };
 
 export const Container = styled.div`
-  height: 450px;
-  width: 300px;
-  border-radius: 1rem;
+  height: 200px;
+  max-width: 300px;
+  width: 90%;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: #424242 0px 0px 13px -1px;
   margin: 10px 20px;
   transform: translateY(0);
   transition: all 0.25s ease-in-out;
@@ -23,77 +22,44 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header<HeaderProps>`
-  height: 340px;
+  height: 135px;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  background: url(${({ cover }) => cover}) no-repeat top center #cccccc;
+  background: url(${({ cover }) => cover}) no-repeat center top #cccccc;
   background-size: cover;
 `;
 
 export const Details = styled.div`
-  background: linear-gradient(#242734, #4d4a02);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+  background-color: #ffffff;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   strong {
-    color: #fff;
-    font-size: 1.4rem;
+    color: #000;
+    font-size: 1.2rem;
     display: block;
-    padding: 15px;
+    margin-bottom: 5px;
   }
 
   .info {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    font-size: 1.3rem;
+    font-size: 1rem;
 
-    .price {
-      color: #fff;
-      font-weight: bold;
-
-      span {
-        color: #34da77;
-      }
-    }
-
-    .rating {
-      color: #fff;
+    .info-detail {
+      color: #000;
       font-weight: bold;
       display: flex;
-      align-items: center;
+      justify-content: center;
 
       span {
-        margin-left: 5px;
-        vertical-align: middle;
-      }
-    }
-
-    button {
-      border: none;
-      background: none;
-      cursor: pointer;
-      height: 40px;
-      background-color: #117cde;
-      padding: 0px 15px;
-      border-radius: 0.5rem;
-      color: #fff;
-      font-weight: bold;
-      opacity: 1;
-      transition: all 0.25s ease-out;
-
-      &:hover {
-        opacity: 0.7;
-      }
-
-      svg {
-        vertical-align: middle;
+        margin-left: 3px;
       }
     }
   }

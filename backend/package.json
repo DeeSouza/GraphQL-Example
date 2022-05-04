@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.27.2",
     "graphql-yoga": "^1.18.3",
     "mongoose": "^6.0.2"
   }

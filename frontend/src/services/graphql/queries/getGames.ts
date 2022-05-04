@@ -4,8 +4,6 @@ const GET_GAMES = /* GraphQL */ `
       id
       name
       rating
-      price
-      forSale
       platform
       cover
     }

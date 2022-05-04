@@ -7,7 +7,7 @@ const MenuButton = () => {
 
   return (
     <Button onClick={handleToggleMenu}>
-      <FaGamepad size={32} color="#000" />
+      <FaGamepad size={32} color="#ff6347" />
     </Button>
   );
 };

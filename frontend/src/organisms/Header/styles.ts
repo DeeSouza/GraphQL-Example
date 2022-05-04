@@ -5,7 +5,7 @@ export const Container = styled.header`
   background-color: #fff;
   box-shadow: 0 0 12px 0 #7a7a7a;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
   .wrapper {
     height: 50px;

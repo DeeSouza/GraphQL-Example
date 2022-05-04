@@ -1,22 +1,14 @@
+import GetGamesService from "./games/GetGamesService";
 import Game from "./schemas/Game";
-import GameComment from "./schemas/GameComment";
 
 export default {
   Query: {
-    getGames: () => Game.find().populate("comments"),
-    getGame: (_, { id }) => Game.findById(id).populate("comments"),
-  },
+    getGames: () => {
+      const gamesService = new GetGamesService();
+      console.log(gamesService);
 
-  Mutation: {
-    addGame: (_, { game }) => Game.create(game),
-    addCommentGame: async (_, { comment }) => {
-      const commentGame = await GameComment.create(comment);
-      const gameById = await Game.findById(comment.game);
-
-      gameById.comments.push(commentGame);
-      gameById.save();
-
-      return commentGame;
+      return gamesService.execute();
     },
+    getGame: (_, { id }) => Game.findById(id),
   },
 };

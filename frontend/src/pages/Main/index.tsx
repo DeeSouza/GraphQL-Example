@@ -1,14 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+
+import { useMenu } from "contexts/MainContext";
 
 import Card from "organisms/Card";
-import client from "services/graphql/client";
 
+import client from "services/graphql/client";
 import GET_GAMES from "services/graphql/queries/getGames";
 
-import * as S from "./styles";
 import { GamesProps, Game } from "./types";
 
+import * as S from "./styles";
+
 const Main = () => {
+  const { showMenu } = useMenu();
+  const refContainer = useRef<HTMLDivElement>(null);
   const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
@@ -18,8 +23,16 @@ const Main = () => {
     })();
   }, []);
 
+  useEffect(() => {
+    const overflow = showMenu ? "hidden" : "auto";
+
+    if (refContainer.current && refContainer.current.parentElement) {
+      refContainer.current.parentElement.style.overflow = overflow;
+    }
+  }, [showMenu]);
+
   return (
-    <S.Container>
+    <S.Container show={showMenu} ref={refContainer}>
       {games.map((game) => (
         <Card key={game.id} {...game} />
       ))}

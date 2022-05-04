@@ -16,7 +16,7 @@ const globalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: #e3db01;
+        background-color: lightseagreen;
         
     }
 `;

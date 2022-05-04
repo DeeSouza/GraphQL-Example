@@ -1,16 +1,10 @@
 schema {
   query: Query
-  mutation: Mutation
 }
 
 type Query {
   getGame(id: ID!): Game
   getGames: [Game]
-}
-
-type Mutation {
-  addGame(game: GameInput!): Game
-  addCommentGame(comment: CommentInput!): GameComment
 }
 
 enum PLATFORM {
@@ -19,34 +13,10 @@ enum PLATFORM {
   PLAYSTATION
 }
 
-type GameComment {
-  id: ID
-  username: String
-  comment: String
-}
-
 type Game {
   id: ID
   name: String
   rating: Int
-  price: Float
-  forSale: Boolean
   platform: PLATFORM
   cover: String
-  comments: [GameComment]
-}
-
-input GameInput {
-  name: String!
-  price: Float!
-  forSale: Boolean!
-  platform: PLATFORM!
-  rating: Int!
-  cover: String!
-}
-
-input CommentInput {
-  username: String!
-  comment: String!
-  game: ID!
 }

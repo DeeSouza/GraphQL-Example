@@ -13,8 +13,10 @@ export const NavMenu = styled.nav<NavMenuProps>`
   position: absolute;
   top: 0;
   left: 0;
-  transform: ${({ show }) => (show ? "translateX(0%)" : "translateX(-100%)")};
+  transform: ${({ show }) =>
+    show ? "translate(0%, 0)" : "translate(-100%, 0)"};
   transition: all 0.5s ease-in-out;
+  z-index: 1;
 
   ul {
     list-style: none;
