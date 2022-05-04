@@ -1,14 +1,14 @@
 # (GraphQL + NodeJS + MongoDB) + React JS
 
-# Install Docker
+### Install Docker
 
-# Pull Image MongoDB
+### Pull Image MongoDB
 
 ```sh
 docker run --name mongodb -p 27017:27017 -d mongo
 ```
 
-# Run API Server
+### Run API Server
 ```sh
 npx json-server --watch api.json --port 3001
 ```
