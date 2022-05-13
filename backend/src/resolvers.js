@@ -5,7 +5,6 @@ export default {
   Query: {
     getGames: () => {
       const gamesService = new GetGamesService();
-      console.log(gamesService);
 
       return gamesService.execute();
     },
