@@ -1,15 +1,13 @@
 import { useEffect, useState, useRef } from "react";
 
 import { useMenu } from "contexts/MainContext";
-
 import Card from "organisms/Card";
 
 import client from "services/graphql/client";
 import GET_GAMES from "services/graphql/queries/getGames";
 
 import { GamesProps, Game } from "./types";
-
-import * as S from "./styles";
+import { Container } from "./styles";
 
 const Main = () => {
   const { showMenu } = useMenu();
@@ -32,11 +30,11 @@ const Main = () => {
   }, [showMenu]);
 
   return (
-    <S.Container show={showMenu} ref={refContainer}>
+    <Container show={showMenu} ref={refContainer}>
       {games.map((game) => (
         <Card key={game.id} {...game} />
       ))}
-    </S.Container>
+    </Container>
   );
 };
 

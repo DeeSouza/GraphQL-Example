@@ -8,7 +8,7 @@ export const Container = styled.header`
   z-index: 2;
 
   .wrapper {
-    height: 50px;
+    height: 65px;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -5,6 +5,7 @@ const Header = () => (
   <Container>
     <div className="wrapper">
       <strong>Play the Game</strong>
+
       <MenuButton />
     </div>
   </Container>
